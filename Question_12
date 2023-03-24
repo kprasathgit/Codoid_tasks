@@ -1,3 +1,11 @@
+/*  Write a program to generate the following output in java?
+*
+**
+****
+*****
+******  
+*/
+
 public class Question_12 {
 
 	public static void main(String[] args) {
