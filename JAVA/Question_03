@@ -1,0 +1,51 @@
+import java.util.HashSet;
+import java.util.Scanner;
+
+public class DuplicateCharacters{
+
+static HashSet<Character> find_duplicate(String str) 
+  {
+		HashSet<Character> uniqueChars = new HashSet<Character>();
+		HashSet<Character> duplicateChars = new HashSet<Character>();
+
+ // Looping over each character in the string
+		for (int i = 0; i < str.length(); i++) {
+			char c = str.charAt(i);
+
+// If the character is already in the set of unique characters, add it to the set of duplicate characters
+			if (uniqueChars.contains(c)) {
+				duplicateChars.add(c);
+			}
+
+// Otherwise, add the character to the set of unique characters
+			else {
+				uniqueChars.add(c);
+			}
+		}
+		return duplicateChars;
+	}
+
+
+
+	public static void main(String[] args) {
+
+// Getting input from console
+		Scanner scan = new Scanner(System.in);
+		System.out.print("Enter a string : ");
+		String str = scan.nextLine();
+
+// calling method to find duplicate
+		HashSet<Character> dupchars = find_duplicate(str);
+
+		if (dupchars.isEmpty())
+			System.out.println("There is no duplicate characters in given string");
+
+		else {
+// Iterate over the set of duplicate characters and print them
+			System.out.print("Duplicate characters: ");
+			for (char c : dupchars)
+				System.out.print(c + ",");
+		}
+
+	}
+}
