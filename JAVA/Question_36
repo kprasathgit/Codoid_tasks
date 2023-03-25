@@ -1,0 +1,25 @@
+	
+  // Write a Java Program for Fibonacci series.
+  
+		public class FibonacciSeries {
+		    public static void main(String[] args) {
+		    	
+		        int n = 10; // Number up to which Fibonacci series needs to find
+		        
+		        int a= 0, b = 1, c; // Initial values of the three numbers in Fibonacci series
+
+		        System.out.print("Fibonacci series up to " + n + ": ");
+
+		        for (int i = 0; i < n; i++) {
+		        	
+		            System.out.print(a + " "); // Print the current number in Fibonacci series
+		            
+		            c = a + b; // Calculate the next number in the series
+		            
+		            a = b; // Update a and b to calculate the next number in the series
+		            
+		            b = c;
+		        }
+		    }
+		}
+
