@@ -1,0 +1,26 @@
+// What is Stringjoiner in Java 8?
+
+/* StringJoiner is a class introduced in Java 8 that provides an easy way to join strings with a delimiter.
+It's part of the java.util package and is used to concatenate strings with a specified delimiter, prefix, and suffix. */
+
+
+import java.util.StringJoiner;
+public class Question_23 {
+
+	public static void main(String[] args) {
+  
+		StringJoiner sj = new StringJoiner(" ", "[", "]"); // argument contains "delimeter","prefix"."suffix" values.
+    
+//Add elements using add method from string joiner.    
+		sj.add("welcome");
+		sj.add("to");
+		sj.add("codoid");
+		sj.add("innovations");
+    
+		String result = sj.toString(); //converting stringjoiner to string.
+  
+		System.out.println(result);  //print string 
+
+	}
+
+}
