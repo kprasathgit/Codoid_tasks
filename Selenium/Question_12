@@ -1,0 +1,92 @@
+//How to shift between tabs of the same browser using selenium?
+
+
+package Codoid_tasks;
+import java.util.Set;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WindowType;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+
+public class Switching_tabs {
+
+	public static void main(String[] args) throws InterruptedException {
+
+// Set the path to the ChromeDriver executable
+		System.setProperty("webdriver.chrome.driver",
+				"D:\\SOFTWARES\\SOFTWARE TESTING\\3.chromedriver_win32\\chromedriver.exe");
+
+// Creating instance from chromedriver
+		WebDriver driver = new ChromeDriver();
+
+// navigating to website
+		driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
+		System.out.println(driver.getTitle()); // getting title of the website
+		System.out.println(driver.getCurrentUrl()); // getting url  of the current website
+		Thread.sleep(1000);
+
+//Maximizing window		
+		driver.manage().window().maximize();
+		Thread.sleep(1500L);
+
+//Switching to new tab in same browser		
+		driver.switchTo().newWindow(WindowType.TAB);
+
+ //Opening new website	
+		driver.get("https://login.salesforce.com/?locale=in");
+		Thread.sleep(1000L);
+
+ //Performing login actions		
+		driver.findElement(By.id("username")).sendKeys("hello");  //sending username
+		Thread.sleep(1000L);
+		driver.findElement(By.id("password")).sendKeys("hi");  //sending passcode
+		Thread.sleep(1000L);
+		driver.findElement(By.id("Login")).click();// click sumbit button
+		Thread.sleep(1000);
+
+ //Switching again to new tab in same browser
+		driver.switchTo().newWindow(WindowType.TAB);
+
+ //Opening new website	
+		driver.get("https://www.youtube.com/");
+
+ // Getting information from new tab
+		System.out.println(driver.getTitle());   // getting title of the website
+		System.out.println(driver.getCurrentUrl()); // getting url  of the current website
+		Thread.sleep(1000);
+
+//Switch back to first tab	
+		Set<String> windows = driver.getWindowHandles(); // collecting all windows elements as set
+		String window1 = (String) driver.getWindowHandles().toArray()[0]; //Get window info. at 0th index of set.
+		driver.switchTo().window(window1);//switching
+  
+//Performing dynamic operation on first tab	
+		driver.findElement(By.name("ctl00_mainContent_ddl_originStation1_CTXT")).click(); // Locating departure city box 
+		Thread.sleep(1000L);
+		
+		driver.findElement(By.xpath("//div[@id='ctl00_mainContent_ddl_originStation1_CTNR'] //a[@value ='GOI']")).click(); // selecting departure city using parent child relation
+		Thread.sleep(1000L);
+		
+		driver.findElement(By.xpath("//div[@id='ctl00_mainContent_ddl_destinationStation1_CTNR'] //a[@value ='COK']")).click();// selecting arrival city using parent child relation
+		Thread.sleep(1000L);
+	
+ //Switching to third tab	
+		String window3 = (String) driver.getWindowHandles().toArray()[2];
+		driver.switchTo().window(window3);
+		Thread.sleep(1000L);
+		driver.close(); // close third tab
+
+ //Switching to second tab
+		String window2 = (String) driver.getWindowHandles().toArray()[1];
+		driver.switchTo().window(window2);
+		Thread.sleep(1000L);
+		driver.close();// close second tab
+
+		Thread.sleep(1000L);
+		driver.quit(); // close first tab
+
+	}
+
+}
