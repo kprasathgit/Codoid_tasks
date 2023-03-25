@@ -1,0 +1,30 @@
+//Implement a program to merge two Arrays
+
+public class MergeArrays {
+
+	public static void main(String[] args) {
+		int[] arr1 = {1, 2, 3}; // First array
+        int[] arr2 = {4, 5, 6}; // Second array
+        int[] mergedArr = new int[arr1.length + arr2.length]; // Resultant array
+
+        // Copy elements of first array into the merged array
+        for (int i = 0; i < arr1.length; i++) {
+            mergedArr[i] = arr1[i];
+        }
+
+        // Copy elements of second array into the merged array
+        for (int i = 0; i < arr2.length; i++) {
+            mergedArr[arr1.length + i] = arr2[i];
+        }
+
+        // Print out the merged array
+        System.out.println("Merged array: ");
+        for (int i = 0; i < mergedArr.length; i++) {
+            System.out.print(mergedArr[i] + " ");
+			
+		}
+		
+
+	}
+
+}
