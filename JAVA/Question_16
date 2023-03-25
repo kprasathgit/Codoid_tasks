@@ -1,0 +1,50 @@
+//How to sort array in java?
+
+
+import java.util.Scanner;
+
+public class Question_16 {
+
+	public static int[] insertionSort(int[] arr) {
+
+		// Loop through the array starting at the second element
+		for (int i = 1; i < arr.length; i++) {
+			int key = arr[i]; // Store the current element in a temporary variable
+			int j = i - 1; // j starting previous index to current element
+
+			// Shift elements greater than the key to the right
+			while (j >= 0 && arr[j] > key) {
+				arr[j + 1] = arr[j];
+				j--;
+			}
+
+			arr[j + 1] = key; // Insert the key in the correct position
+		}
+		return arr;
+	}
+
+	public static void main(String[] args) {
+
+		// Scanning size of array from console
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter size of integer array");
+		int size = scan.nextInt();
+
+		// Declaring array with stated size
+		int[] arr = new int[size];
+
+		// Reading elements into array
+		System.out.println("Enter array elements");
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = scan.nextInt();
+		}
+
+		// Call the insertionSort method with the array to be sorted
+		int[] arr1 = insertionSort(arr);
+
+		// Print the sorted array
+		for (int i : arr1)
+			System.out.print(i + " ");
+	}
+
+}
