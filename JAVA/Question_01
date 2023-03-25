@@ -1,0 +1,33 @@
+//Write a Java program to create and throw custom exceptions
+
+import java.util.Scanner;
+public class CustomExceptions{
+
+	public static void main(String[] args) {
+	
+		Scanner scanner = new Scanner(System.in);
+        try {
+            System.out.print("Enter your age: ");
+            int age = scanner.nextInt(); // Get age input from console
+            
+            if (age < 18) {
+                throw new InvalidAgeException("Age must be at least 18!"); // Throw custom exception if age is less than 18
+            }
+            
+            System.out.println("Access granted!"); // Print a success message if age is at least 18
+            
+        } catch (InvalidAgeException e) {
+            System.out.println("Access denied: " + e.getMessage()); // Print the custom exception message
+            
+        } catch (Exception e) {
+            System.out.println("Invalid input: " + e.getMessage()); // Print an error message for any other exception
+        } 
+    }
+}
+
+class InvalidAgeException extends Exception {
+    public InvalidAgeException(String message) {
+        super(message);    // Call the constructor of the parent class i.e "Exception" which interms calls "Throwable" contains method getMessage().
+	}
+
+}
