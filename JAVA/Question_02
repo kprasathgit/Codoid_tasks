@@ -1,0 +1,31 @@
+// How do we reverse a string?
+
+import java.util.Scanner;
+
+public class  ReverseString {
+
+  static String reverse(String str)
+	   {
+		String s1 =""; // Declaring empty string to store reversed string.
+		
+	//Concatenating characters from last index to first index into empty string. 	
+		for (int i = str.length()-1; i >=0 ; i--) {
+			s1 = s1 + str.charAt(i);			
+		}
+		
+		return s1; // Returns reversed string.
+ 	}
+	
+
+	public static void main(String[] args)  
+	  {
+	   // getting input from console
+		  Scanner scan = new Scanner(System.in);
+			System.out.println("Enter an string:"); 
+			String str = scan.nextLine();
+			
+	   // calling method to reverse the string.	
+			System.out.println(reverse(str)); 
+		}
+			
+	}
