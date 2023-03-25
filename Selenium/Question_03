@@ -1,0 +1,70 @@
+//Write code for Cross Browser Testing
+
+
+package Codoid_tasks;
+import java.util.Scanner;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class CrossBrowserTesting {
+
+	public static void main(String[] args) throws InterruptedException {
+
+		// Reading input from console
+		Scanner scan = new Scanner(System.in);
+		System.out.print("Enter browser name:");
+		String browser = scan.nextLine();
+
+		// Declaring generic driver variable.
+		WebDriver driver;
+
+		switch (browser.toLowerCase()) // Creating instance for desired browser based on input from console.
+		{
+		case ("chrome"): {
+			System.setProperty("webdriver.chrome.driver",
+					"D:\\SOFTWARES\\SOFTWARE TESTING\\3.chromedriver_win32\\chromedriver.exe");
+			driver = new ChromeDriver(); // instance or object creation(here Upcasting).
+			break;
+		}
+
+		case ("firefox"): {
+			System.setProperty("webdriver.gecko.driver",
+					"D:\\SOFTWARES\\SOFTWARE TESTING\\3.chromedriver_win32\\geckodriver.exe");
+			driver = new FirefoxDriver(); // instance or object creation(here Upcasting).
+			break;
+		}
+
+		case ("edge"): {
+			System.setProperty("webdriver.edge.driver",
+					"D:\\SOFTWARES\\SOFTWARE TESTING\\3.msedgedriver\\msedgedriver.exe");
+			driver = new EdgeDriver(); // instance or object creation(here Upcasting).
+			break;
+		}
+    
+		default:
+			throw new IllegalArgumentException("invalid imput" + browser);
+		}
+
+
+		// Navingating to website in mentioned browser
+		driver.get("https://www.facebook.com/");
+
+		// Entering username
+		driver.findElement(By.id("email")).sendKeys("123");
+		Thread.sleep(1000L);
+
+		// Entering password
+		driver.findElement(By.id("pass")).sendKeys("321");
+		Thread.sleep(1000L);
+
+		// Loging in
+		driver.findElement(By.name("login")).click();
+
+		// close browser
+		driver.quit();
+	}
+
+}
