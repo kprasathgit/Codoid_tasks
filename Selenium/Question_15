@@ -1,0 +1,42 @@
+// How to find more than one web element in the list?
+
+
+package Codoid_tasks;
+import java.util.List;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class MultipleWebElements {
+	public static void main(String[] args) throws InterruptedException {
+		
+// Set the system property for chrome browser
+		System.setProperty("webdriver.chrome.driver", "D:\\SOFTWARES\\SOFTWARE TESTING\\3.chromedriver_win32\\chromedriver.exe");
+		
+//Creating instance for chromedriver
+		WebDriver driver = new ChromeDriver(); //upcasting
+		
+// Navigating  to the website 	
+		driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
+		
+//Maximizing the wnidow
+		driver.manage().window().maximize();
+		
+//Finding search bar containing list of webelements
+		driver.findElement(By.id("autosuggest")).sendKeys("in");		
+		Thread.sleep(1000);	
+		
+//Collecting all webelements into an list
+		List <WebElement> ele  = driver.findElements(By.cssSelector(".ui-menu-item a"));
+		
+//Iterating over the list and print webelement in the form of readable text i.e Countries name
+		for (WebElement a : ele) 
+			System.out.println(a.getText());
+		
+//close browser
+		driver.quit();		
+		
+	}
+
+}
