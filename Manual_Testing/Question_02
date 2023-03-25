@@ -1,0 +1,32 @@
+
+ BUG REPORT : Submit Button Not Working on Login Page
+
+
+Summary:
+        The submit button on the login page is not working, preventing users from logging in successfully.
+        
+Steps to Reproduce:
+
+         i)Navigate to the login page.
+        ii)Enter a valid username and password.
+       iii)Click on the submit button.
+        iv)Note that the page does not refresh or redirect to the dashboard.
+           
+Expected Result:
+              After clicking on the submit button, the page should redirect to the corresponding webpage, indicating a successful login.
+
+Actual Result:
+              After clicking on the submit button, nothing happens. The page does not redirect, indicating that the login attempt was unsuccessful.
+
+Impact:
+             This will prevent users from accessing the system and performing necessary tasks, leading to  loss of productivity.
+
+Environment:
+             Browser: Chrome, version 96.0.4664.110
+             Operating System: Windows 10
+             
+Recommendation:
+              1.The development team should fix the issue with the submit button on the login 
+                 page as soon as possible to ensure that users can log in and access the system. 
+              2.Testing should be conducted again to confirm that the fix has resolved the issue and that there are no other 
+                 related issues with the login process.
