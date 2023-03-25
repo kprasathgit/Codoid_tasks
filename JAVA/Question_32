@@ -1,0 +1,34 @@
+//Program to find duplicate values for ArrayList
+
+import java.util.ArrayList;
+
+public class FindDuplicateValues {
+    public static void main(String[] args) {
+    
+    // Create an ArrayList and add some integers to it
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(2);
+        list.add(4);
+        list.add(3);
+
+   // Create an ArrayList to store the duplicate values
+        ArrayList<Integer> duplicates = new ArrayList<Integer>();
+
+  // Loop through the list and check each value against every other value in the list
+        for (int i = 0; i < list.size(); i++) {
+            for (int j = i + 1; j < list.size(); j++) {
+  // If two values are equal and not already in the duplicates list, add them to the duplicates list
+                
+                if (list.get(i).equals(list.get(j)) && !duplicates.contains(list.get(i))) {
+                    duplicates.add(list.get(i));
+                }
+            }
+        }
+
+  // Print out the duplicate values
+        System.out.println("Duplicate values: " + duplicates);
+    }
+}
