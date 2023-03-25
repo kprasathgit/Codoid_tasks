@@ -15,7 +15,7 @@ public class Screenshot {
 		System.setProperty("webdriver.chrome.driver", "D:\\SOFTWARES\\SOFTWARE TESTING\\3.chromedriver_win32\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver(); //upcasting
 		
-		// Navigating  to the amazon website 	
+		// Navigating  to the website 	
 		driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
 		
 		//Maximizing the browser window
@@ -24,7 +24,7 @@ public class Screenshot {
 		
 		// Take a screenshot and save it as a file
         TakesScreenshot screenshot = (TakesScreenshot) driver;  // Downcasting .Because "TakesScreenshot" interface implemented by "Chrome driver class"
-        File file = screenshot.getScreenshotAs(OutputType.FILE);
+        File file = screenshot.getScreenshotAs(OutputType.FILE); // TakesScreenshot class has method which take screen shot
        
         file.renameTo(new File("screenshot.png"));
         
