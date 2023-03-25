@@ -1,0 +1,28 @@
+// Implement factorial using recursion
+
+
+import java.util.Scanner;
+public class FactorialRecursion{
+
+	public static int factorial(int num) 
+  {		
+		if (num == 1) // when num equals to 1 executes.
+			return 1;
+		else
+			num = num * factorial(num - 1); // recursive calling
+		return num;
+	}
+
+
+	public static void main(String[] args) 
+  {
+ // Reading input from console
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter integer to find factorial:");
+		int n = scan.nextInt();  // storing integer to variable.
+
+ // calling function to find factorial and printing the result
+		System.out.println("Factorial is:" + factorial(n));
+	}
+
+}
