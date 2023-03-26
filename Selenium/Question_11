@@ -1,0 +1,85 @@
+//Write code for handling multiple browsers and switch to new windows?
+
+
+package Codoid_tasks;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WindowType;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class BrowserWindowSwitch {
+	public static void main(String[] args) throws InterruptedException {
+
+		// Set system path for drier executable
+		System.setProperty("webdriver.chrome.driver",
+				"D:\\SOFTWARES\\SOFTWARE TESTING\\3.chromedriver_win32\\chromedriver.exe");
+
+		// Creating instance from chromedriver
+		WebDriver driver = new ChromeDriver();
+
+		// navigate to a website
+		driver.get("https://rahulshettyacademy.com/dropdownsPractise/");	
+		String currentWindowHandle = driver.getWindowHandle(); //get the current window handle,such that original window.
+
+		// Open second window 
+		driver.switchTo().newWindow(WindowType.WINDOW);
+		driver.get("https://www.youtube.com/");  //navigate to a website
+		String windowHandle1 = driver.getWindowHandle(); //get the second window handle
+
+		// Open third window
+		driver.switchTo().newWindow(WindowType.WINDOW);
+		driver.get("https://www.facebook.com/login/"); //navigate to a website
+		String windowHandle2 = driver.getWindowHandle(); //get the third window handle
+		Thread.sleep(2000L);
+
+		
+		// switch back to the original window
+		driver.switchTo().window(currentWindowHandle);
+		// do something in the original window
+		System.out.println("Title of original window: " + driver.getTitle());// get title of current wesite
+		Thread.sleep(1000L);
+		WebElement ele = driver.findElement(By.cssSelector("#ctl00_mainContent_DropDownListCurrency"));
+		Select sdd = new Select(ele);
+		Thread.sleep(2000L);
+		sdd.selectByValue("AED");
+		Thread.sleep(1000L);
+		System.out.println(sdd.getFirstSelectedOption().getText());
+		Thread.sleep(1000L);
+
+		
+		
+		// switch to second window
+		driver.switchTo().window(windowHandle1);
+		System.out.println("Title of second window: " + driver.getTitle()); //get title
+		Thread.sleep(2000L);
+
+		
+		// switch to third window
+		driver.switchTo().window(windowHandle2);
+		Thread.sleep(2000L);
+		// login into facebook
+		System.out.println("Title of third window: " + driver.getTitle());
+		Thread.sleep(2000L);
+		driver.findElement(By.id("email")).sendKeys("123"); // send username
+		Thread.sleep(1000L);
+		driver.findElement(By.id("pass")).sendKeys("321"); // send password
+		Thread.sleep(1000L);
+		driver.findElement(By.name("login")).click(); // click submit
+		Thread.sleep(2000L);
+		driver.close(); // close the third window
+
+		
+		// switch to second window
+		driver.switchTo().window(windowHandle1);
+		driver.close();  // close the second window
+		Thread.sleep(2000L);
+		
+		
+		// switch back to the original window
+		driver.switchTo().window(currentWindowHandle);
+		driver.quit();// quit the driver
+
+	}
+}
