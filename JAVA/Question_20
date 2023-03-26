@@ -1,6 +1,6 @@
 //Write a Java program to show a NullPointerException.
      
-    //Ans: In our program ,NullPointerException will be thrown, because name null does not have a length() method.
+    //Ans: In our program ,NullPointerException will be thrown, because the name does not have a length.
 
 public class NullPointerException{
 
