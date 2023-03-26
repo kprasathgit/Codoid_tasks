@@ -1,0 +1,58 @@
+// Implement more than one interface in a single class
+          
+        // Interface designed for providing rules and specifications not for holding logic.
+        // "implements" -- to communicate with interface.
+        //  "extends" keyword -- to communicate with class and abstract class
+
+SOURCE CODE:
+
+// Multilevel interface inheritance executed.
+interface VehicleInterior {
+	public abstract void ac();
+}
+
+interface VehicleExterior extends VehicleInterior {
+	public abstract void windows();
+	public abstract void wheels();
+}
+
+interface VehicleFuel extends VehicleExterior {
+	public abstract void fuel();
+}
+
+interface Vehicle extends VehicleFuel {
+}
+
+
+// Implementing vehicle interface
+class volvo implements Vehicle {
+
+	public void ac() {
+		System.out.println("Vehicle required ac");
+	}
+
+	public void windows() {
+		System.out.println("Minimum four windows required");
+	}
+
+	public void wheels() {
+		System.out.println("It should have four wheels");
+	}
+
+	public void fuel() {
+		System.out.println("Can run by petrol/electric or hybrid");
+	}
+
+}
+
+
+public class Question_54 {
+	public static void main(String[] args) {
+
+		volvo v = new volvo(); // accessing volvo class which implements vehicle rules.
+		v.ac();
+		v.windows();
+		v.wheels();
+		v.fuel();
+	}
+}
