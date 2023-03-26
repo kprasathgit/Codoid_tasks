@@ -1,0 +1,63 @@
+// How to create constructor overloading in java Program.
+
+       // We can create constructor overloading by writing constructor multiple times in same class with different paramenters. 
+       
+ 
+ 
+public class Student {
+
+	int sid; // student id
+	String sname; // student name
+	double sfee; // student fees
+
+	Student() { 
+		System.out.println("Zero argument constructor");
+	}
+
+	Student(int sid) {
+		this.sid = sid;
+		System.out.println("integer argument constructor");
+	}
+
+	Student(String sname) {
+		this.sname = sname;
+		System.out.println("String argument constructor");
+	}
+
+	Student(double sfee) {
+		this.sfee = sfee;
+		System.out.println("double argument constructor");
+	}
+
+	Student(int sid, String sname, double sfee) {
+		this.sid = sid;
+		this.sname = sname;
+		this.sfee = sfee;
+		System.out.println("multi argument constructor");
+	}
+
+
+
+	public static void main(String[] args) {
+
+		Student s = new Student(); // call zero arg constructor
+		System.out.println("s:" + s.sid + "..." + s.sname + ".." + s.sfee);
+
+		Student s1 = new Student(123); // call int arg constructor
+		System.out.println("s1:" + s1.sid + "..." + s1.sname + ".." + s1.sfee);
+
+		Student s2 = new Student("Ganesh"); // call string arg constructor
+		System.out.println("s2:" + s2.sid + "..." + s2.sname + ".." + s2.sfee);
+
+		Student s3 = new Student(50000.78d); // call double arg constructor
+		System.out.println("s3:" + s3.sid + "..." + s3.sname + ".." + s3.sfee);
+
+		Student s4 = new Student(101, "Ganesh", 50000.25d); // call multi arg constructor
+		System.out.println("s4:" + s4.sid + "..." + s4.sname + ".." + s4.sfee);
+	}
+
+}
+
+           
+            
+            
