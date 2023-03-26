@@ -1,5 +1,5 @@
-//Write code for handling multiple browsers and switch to new windows?
 
+//Write code for handling multiple browsers and switch to new windows?
 
 package Codoid_tasks;
 import org.openqa.selenium.By;
@@ -30,7 +30,7 @@ public class BrowserWindowSwitch {
 
 		// Open third window
 		driver.switchTo().newWindow(WindowType.WINDOW);
-		driver.get("https://www.facebook.com/login/"); //navigate to a website
+		driver.get("https://www.facebook.com/login/");  //navigate to a website
 		String windowHandle2 = driver.getWindowHandle(); //get the third window handle
 		Thread.sleep(2000L);
 
@@ -38,7 +38,7 @@ public class BrowserWindowSwitch {
 		// switch back to the original window
 		driver.switchTo().window(currentWindowHandle);
 		// do something in the original window
-		System.out.println("Title of original window: " + driver.getTitle());// get title of current wesite
+		System.out.println("Title of original window: " + driver.getTitle()); // get title of current wesite
 		Thread.sleep(1000L);
 		WebElement ele = driver.findElement(By.cssSelector("#ctl00_mainContent_DropDownListCurrency"));
 		Select sdd = new Select(ele);
@@ -59,6 +59,7 @@ public class BrowserWindowSwitch {
 		// switch to third window
 		driver.switchTo().window(windowHandle2);
 		Thread.sleep(2000L);
+		
 		// login into facebook
 		System.out.println("Title of third window: " + driver.getTitle());
 		Thread.sleep(2000L);
