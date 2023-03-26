@@ -1,0 +1,63 @@
+//Implement a program for encapsulation
+      // Encapsulation is a mechanism where you bind your data(variables) and code(methods) together as a single unit. 
+      //Here, the data is hidden from the outer world and can be accessed only via current class methods. 
+      //This helps in protecting the data from any unnecessary modification. 
+       //We can achieve encapsulation in Java by: Declaring the variables of a class as private.
+
+
+import java.util.Scanner;
+class Encapsulation {
+
+	private double salary;
+	private double bonus;
+
+	// constructor assigns from local to global variable
+	public Encapsulation(double basesalary, int noOfProjectsCompleted) {
+
+		this.salary = basesalary;
+
+		// if project completed is more than then 10 bonus will be 20% of base salary
+		if (noOfProjectsCompleted >= 10) {
+			this.bonus = salary * 0.20;
+
+		// if project completed is between 1 to 9 then bonus will be 10% of base salary
+		} else if (noOfProjectsCompleted >= 1 && noOfProjectsCompleted <= 9) {
+			this.bonus = salary * 0.10;
+
+		// otherwise no bonus
+		} else
+			this.bonus = basesalary;
+
+	}
+
+	public double getSalaryWithBonus() {
+
+		// returns new salary with bonus
+		return (salary + bonus);
+	}
+
+}
+
+
+
+class Test {
+	public static void main(String[] args) {
+
+		// Reading data from console
+		Scanner scan = new Scanner(System.in);
+		System.out.print("Enter your name: ");
+		String name = scan.nextLine();
+
+		System.out.print("base salary: ");
+		double basesalary = scan.nextDouble();
+
+		System.out.print("Enter no.Of project completed: ");
+		int num = scan.nextInt();
+
+		// object creation to access methods
+		Encapsulation e = new Encapsulation(basesalary, num);
+
+		// calling method to get new salary
+		System.out.println(name + ", your salary with incentive will be Rs." + e.getSalaryWithBonus());
+	}
+}
