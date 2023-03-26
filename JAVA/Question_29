@@ -1,0 +1,5 @@
+ // Implement multiple inheritances using an interface
+ 
+     A class  having more than one super class is known as MULTIPLE INHERITANCE in java. 
+     It is not allowed in java because it creates ambiguity.
+     From example, if an employee data present in both super class when we try to acess theemployee data , jvm will unable to recognize which employee data to get access.
