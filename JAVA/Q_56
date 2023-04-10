@@ -1,7 +1,7 @@
 //Implement a program for encapsulation
       // Encapsulation is a mechanism where you bind your data(variables) and code(methods) together as a single unit. 
       //Here, the data is hidden from the outer world and can be accessed only via current class methods. 
-      //This helps in protecting the data from any unnecessary modification. 
+      //This helps in protecting the data from any unnecessary modification.. 
        //We can achieve encapsulation in Java by: Declaring the variables of a class as private.
 
 
