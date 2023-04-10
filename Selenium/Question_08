@@ -1,4 +1,4 @@
-// Write code for taking Screenshot
+// Write code for taking Screenshot.
 
 package Codoid_tasks;
 import java.io.File;
