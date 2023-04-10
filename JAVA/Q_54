@@ -2,7 +2,7 @@
           
         // Interface designed for providing rules and specifications not for holding logic.
         // "implements" -- to communicate with interface.
-        //  "extends" keyword -- to communicate with class and abstract class
+        //  "extends" keyword -- to communicate with class and abstract class.
 
 SOURCE CODE:
 
