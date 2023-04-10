@@ -1,4 +1,4 @@
-//How to create Method Overriding program in java
+//How to create Method Overriding program in java.
       // Method overriding can be created by writing same method and arguments in different class.
        // It exhibits at runtime so it called run time polymorphism. 
 
