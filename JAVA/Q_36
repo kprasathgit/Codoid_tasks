@@ -18,7 +18,7 @@
 		            
 		            a = b; // Update a and b to calculate the next number in the series
 		            
-		            b = c;
+		            b = c;;
 		        }
 		    }
 		}
