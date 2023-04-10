@@ -1,5 +1,5 @@
 
-//Write code for handling multiple browsers and switch to new windows
+//Write code for handling multiple browsers and switch to new windows.
 
 package Codoid_tasks;
 import org.openqa.selenium.By;
