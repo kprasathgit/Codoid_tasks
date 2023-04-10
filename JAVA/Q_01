@@ -1,4 +1,4 @@
-//Write a Java program to create and throw custom exceptions
+//Write a Java program to create and throw custom exceptions.
 
 import java.util.Scanner;
 public class CustomExceptions{
