@@ -1,4 +1,4 @@
- // Implement multiple inheritances using an interface
+ // Implement multiple inheritances using an interface.
  
      A class  having more than one super class is known as MULTIPLE INHERITANCE in java. 
      It is not allowed in java because it creates ambiguity.
